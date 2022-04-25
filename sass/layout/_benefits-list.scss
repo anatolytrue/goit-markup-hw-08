@@ -2,15 +2,16 @@
     padding-top: 0;
 }
 
+@media (max-width: 1199px){
+    .section_not-padding-top{
+        display: none;
+    }
+}
 
 .benefits-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    // &:not(:last-child) {
-    //     margin-right: 30px;
-    // }
 }
 
 .benefits-list__thumb {

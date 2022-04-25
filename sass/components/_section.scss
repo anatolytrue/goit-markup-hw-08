@@ -1,7 +1,15 @@
 .section {
+    padding-top: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+    .section {
     padding-top: 94px;
     padding-bottom: 94px;
 }
+
+}
+
 
 .section__title {
     font-weight: 700;
