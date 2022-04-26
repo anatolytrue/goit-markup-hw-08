@@ -453,11 +453,13 @@ address {
     visibility: hidden;
     pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: scroll;
   }
   .mobile-menu.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    z-index: 99;
   }
   .mobile-menu__container {
     display: flex;
@@ -986,9 +988,18 @@ address {
 
 .projects-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
+  justify-content: baseline;
+  margin-bottom: 40px;
+}
+
+.projects-list__item {
+  margin-bottom: 15px;
+}
+
+.projects-list__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .projects-list__button {
@@ -998,7 +1009,7 @@ address {
   cursor: pointer;
   text-align: center;
   letter-spacing: 0.03em;
-  padding: 6px 22px 6px 22px;
+  padding: 6px 22px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-style: hidden;
   border-radius: 4px;
@@ -1011,24 +1022,21 @@ address {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.projects-list__item:not(:last-child) {
-  margin-right: 8px;
-}
-
 .portfolio-projects {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  margin: -15px;
 }
 
-.portfolio-projects__item {
-  margin: 15px;
-  flex-flow: calc((100%-90px) / 3);
+@media screen and (max-width: 767px) {
+  .portfolio-projects__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 .portfolio-projects__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
@@ -1059,7 +1067,6 @@ address {
   color: var(--main-color);
   font-size: 18px;
   line-height: 1.56;
-  /* or 156% */
   letter-spacing: 0.03em;
   opacity: 1;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1088,6 +1095,35 @@ address {
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: var(--seconary-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .projects-list {
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .projects-list__item {
+    margin-bottom: 0;
+  }
+  .portfolio-projects {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: -15px;
+  }
+  .portfolio-projects__item {
+    margin: 15px;
+  }
+  .portfolio-projects__link {
+    display: block;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects-list {
+    margin-bottom: 50px;
+  }
 }
 
 .footer {
