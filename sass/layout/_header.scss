@@ -14,6 +14,11 @@
 // 0 - 767px
 
 @media screen and (max-width: 767px) {
+    .header__container{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
     .nav-list {
         display: none;
     }

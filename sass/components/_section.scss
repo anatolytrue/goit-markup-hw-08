@@ -1,5 +1,6 @@
 .section {
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -13,12 +14,20 @@
 
 .section__title {
     font-weight: 700;
-    font-size: 36px;
-    line-height: 1.17;
+    font-size: 28px;
+    line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+    .section__title{
+        font-size: 36px;
+        line-height: 1.17;
+        margin-bottom: 50px;
+    }
 }
 
 .section_secondary-background {
