@@ -498,6 +498,9 @@ address {
   .mobile-menu__nav-link:hover, .mobile-menu__nav-link:focus {
     color: var(--secondary-color);
   }
+  .mobile-menu__nav-link_active {
+    color: var(--secondary-color);
+  }
   .mobile-menu__contact-item:not(:last-child) {
     margin-bottom: 32px;
   }
@@ -662,8 +665,8 @@ address {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/header-mobile.jpg);
   background-size: cover;
   background-color: var(--background-footer);
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   max-width: 767px;
   margin-left: auto;
   margin-right: auto;
@@ -709,14 +712,6 @@ address {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 200px;
-    max-width: 1600px;
-  }
-}
-
 .hero__title {
   font-weight: 900;
   font-size: 26px;
@@ -725,6 +720,18 @@ address {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-color);
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    max-width: 1600px;
+  }
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .hero__button {
@@ -789,6 +796,7 @@ address {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-text-color);
+  text-align: center;
 }
 
 .features-list__content {
@@ -807,8 +815,10 @@ address {
   }
   .features-list__item {
     width: 354px;
-    height: 251px;
     margin: 15px;
+  }
+  .features-list__title {
+    text-align: start;
   }
 }
 
@@ -873,11 +883,6 @@ address {
 }
 
 @media screen and (max-width: 767px) {
-  .team-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .team-list__item {
     background-color: var(--main-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1022,13 +1027,10 @@ address {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.portfolio-projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @media screen and (max-width: 767px) {
+  .projects-list_container {
+    margin-bottom: -15px;
+  }
   .portfolio-projects__item:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -1103,26 +1105,43 @@ address {
     justify-content: center;
     margin-bottom: 30px;
   }
+  .projects-list_container {
+    margin-bottom: -15px;
+  }
   .projects-list__item {
     margin-bottom: 0;
   }
   .portfolio-projects {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin: -15px;
   }
   .portfolio-projects__item {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 354px;
     margin: 15px;
   }
   .portfolio-projects__link {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
+  }
+  .portfolio-projects__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .projects-list {
     margin-bottom: 50px;
+  }
+  .portfolio-projects__content {
+    display: flex;
   }
 }
 
@@ -1138,22 +1157,11 @@ address {
 }
 
 .footer__container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
 }
 
 .footer__address {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 60px;
-}
-
-.adress-list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .adress-list .link:focus,
@@ -1181,16 +1189,12 @@ address {
 }
 
 .footer-social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 60px;
 }
 
 .footer-social__list {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   list-style: none;
 }
 
@@ -1232,12 +1236,6 @@ address {
   fill: var(--main-color);
 }
 
-.footer-subscribe {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 .footer-subscribe__form {
   display: flex;
   align-items: center;
@@ -1259,7 +1257,7 @@ address {
 }
 
 .footer-subscribe__input {
-  width: 450px;
+  width: 100%;
   height: 50px;
   margin: 0;
   padding: 15px 16px;
@@ -1298,37 +1296,36 @@ address {
 @media screen and (min-width: 768px) {
   .footer__container {
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
   .footer__address {
-    margin-right: 165px;
-    margin-left: auto;
+    margin-bottom: 0;
   }
   .footer-social {
     align-items: center;
-    margin-right: auto;
-    margin-bottom: 102px;
+    margin-bottom: 0;
   }
   .footer-subscribe {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 60px;
+  }
+  .footer-subscribe__input {
+    width: 450px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__container {
-    display: flex;
+    text-align: left;
     align-items: baseline;
-    flex-direction: row;
     flex-wrap: nowrap;
   }
   .footer__address {
     align-items: baseline;
     margin-right: 70px;
     margin-left: 0;
-    margin-bottom: 0;
   }
   .adress-list {
     align-items: baseline;
@@ -1344,6 +1341,7 @@ address {
   .footer-subscribe {
     display: block;
     margin-left: 0;
+    margin-top: 0;
   }
   .footer-subscribe__form {
     display: flex;

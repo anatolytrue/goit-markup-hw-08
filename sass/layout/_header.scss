@@ -61,6 +61,7 @@
             overflow-y: scroll;
 
              &.is-open {
+                //  position: static;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -111,6 +112,10 @@
             &:focus {
                 color: var(--secondary-color);
             }
+    }
+
+    .mobile-menu__nav-link_active {
+        color: var(--secondary-color);
     }
 
     .mobile-menu__contact-item:not(:last-child){

@@ -28,6 +28,7 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--primary-text-color);
+    text-align: center;
 }
 
 .features-list__content {
@@ -47,8 +48,12 @@
 
     .features-list__item{
         width: 354px;
-        height: 251px;
+        // height: 251px;
         margin: 15px;
+    }
+
+    .features-list__title{
+        text-align: start;
     }
 }
 
