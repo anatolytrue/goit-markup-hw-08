@@ -166,7 +166,7 @@
 
     .mobile-menu__social-item{
         padding: 0 10px;
-        flex-flow: calc((100%-80px)/4);
+        flex-flow: calc((100% - 80px)/4);
 
         &:not(:last-child) {
             border-right: 1px solid rgba(33, 33, 33, 0.2);
